@@ -1,30 +1,56 @@
-Agency Jekyll theme
-====================
+# My website
 
-Agency theme based on [Agency bootstrap theme ](https://startbootstrap.com/template-overviews/agency/)
+This website uses the [Agency Jekyll theme](https://github.com/y7kim/agency-jekyll-theme).
 
-# How to use
+# Setup
 
-###Portfolio 
+## Installing bundle (to be able to install jekyll)
 
-Portfolio projects are in '/_posts'
+```
+sudo pacman -S ruby
+```
 
-Images are in '/img/portfolio'
+```
+gem update
+gem install bundle
+```
 
-###About
+Add this to .zshrc:
+```
+export PATH=$PATH:$HOME/.gem/ruby/2.6.0/bin
+```
 
-Images are in '/img/about/'
+## Setup bundle
 
-###Team
+```
+bundle init
+bundle install --path vendor/bundle
+```
 
-Team members and info are in '_config.yml'
+## How to initialise
 
-Images are in '/img/team/'
+```
+bundle add jekyll --version 3.8.5 # The version is taken from githubs recomendations
+bundle exec jekyll new . --force # Force since there is already this file in the dir
+```
+
+Commit the changes to \_config.yml. Some extra files are generated that are not
+needed (example .md files etc.).
+
+See here: https://jekyllrb.com/tutorials/using-jekyll-with-bundler/
+and here: https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll
 
 
-# Demo
+## Start it
 
-View this jekyll theme in action [here](https://y7kim.github.io/agency-jekyll-theme)
+```
+bundle install
+bundle exec jekyll serve
+```
 
-=========
-For more details, read [documentation](http://jekyllrb.com/)
+## Updating with bundle
+
+
+```
+bundle update github-pages
+```
