@@ -27,11 +27,21 @@ bundle init
 bundle install --path vendor/bundle
 ```
 
-## How to initialise
+## Start the page
+
+```
+bundle update
+bundle install
+bundle exec jekyll serve
+```
+
+## How the initialisation of the repo was made (for documentation only)
 
 ```
 bundle add jekyll --version 3.8.5 # The version is taken from githubs recomendations
+bundle install
 bundle exec jekyll new . --force # Force since there is already this file in the dir
+rm 404.html about.md index.md _posts/*welcome-to-jekyll.markdown
 ```
 
 Commit the changes to \_config.yml. Some extra files are generated that are not
@@ -41,16 +51,3 @@ See here: https://jekyllrb.com/tutorials/using-jekyll-with-bundler/
 and here: https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll
 
 
-## Start it
-
-```
-bundle install
-bundle exec jekyll serve
-```
-
-## Updating with bundle
-
-
-```
-bundle update github-pages
-```
